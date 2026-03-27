@@ -1,9 +1,10 @@
+import { BASE_URL } from "../config";
 import { useLocation, useNavigate } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useSelector } from "react-redux";
 
-const API = import.meta.env.VITE_API_URL;
+const API = BASE_URL;
 
 const stripePromise = loadStripe("pk_test_51T5OnOPgPa6CtfoINy42BsKM0v82aEL9QCz1XJo1WeC89iyxaQA8o0rNs1UPhnjNiNwka6mgOEkGVr8M9ikV7Vcx007OqdBpB6");
 

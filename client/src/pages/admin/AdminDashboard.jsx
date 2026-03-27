@@ -1,10 +1,11 @@
+import { BASE_URL } from "../../config";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AdminSidebar from "../../components/AdminSidebar";
 import { io } from "socket.io-client";
 import { Link } from "react-router-dom";
 
-const API = import.meta.env.VITE_API_URL;
+const API = BASE_URL;
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState({
@@ -45,7 +46,7 @@ const AdminDashboard = () => {
 
   // ✅ Socket.IO
   useEffect(() => {
-    const socket = io(import.meta.env.VITE_SOCKET_URL, { withCredentials: true });
+    const socket = io(BASE_URL, { withCredentials: true });
 
     socket.on("connect", () => {
       socket.emit("joinAdmin");

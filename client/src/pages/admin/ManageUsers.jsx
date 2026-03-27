@@ -1,9 +1,10 @@
+import { BASE_URL } from "../../config";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AdminSidebar from "../../components/AdminSidebar";
 import { useSelector } from "react-redux";
 
-const API = import.meta.env.VITE_API_URL;
+const API = BASE_URL;
 
 const ManageUsers = () => {
   const [users, setUsers] = useState([]);

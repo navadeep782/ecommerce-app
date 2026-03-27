@@ -1,9 +1,10 @@
+import { BASE_URL } from "../config";
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../redux/cartSlice";
 
-const API = import.meta.env.VITE_API_URL;
+const API = BASE_URL;
 
 function PaymentSuccess() {
   const [searchParams] = useSearchParams();

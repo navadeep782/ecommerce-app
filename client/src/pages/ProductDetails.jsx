@@ -1,3 +1,4 @@
+import { BASE_URL } from "../config";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import API from "../services/api";
@@ -25,7 +26,7 @@ function ProductDetails() {
 
 // Add inside ProductDetails component:
   useEffect(() => {
-      const socket = io(import.meta.env.VITE_SOCKET_URL, {
+      const socket = io(BASE_URL, {
         transports: ["websocket", "polling"],
       });
 

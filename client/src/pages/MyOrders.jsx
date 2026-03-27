@@ -1,9 +1,10 @@
+import { BASE_URL } from "../config";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 
-const API = import.meta.env.VITE_API_URL;
+const API = BASE_URL;
 
 // ✅ 4-step display mapping
 const getDisplayStep = (status) => {
@@ -136,7 +137,7 @@ function MyOrders() {
   useEffect(() => {
     if (!userId) return;
 
-    const socket = io(import.meta.env.VITE_SOCKET_URL);
+    const socket = io(BASE_URL);
 
     socket.on("connect", () => {
       socket.emit("join", userId);

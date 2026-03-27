@@ -1,8 +1,9 @@
+import { BASE_URL } from "../config";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../redux/cartSlice";
 
-const API = import.meta.env.VITE_API_URL;
+const API = BASE_URL;
 
 function Checkout() {
   const navigate = useNavigate();

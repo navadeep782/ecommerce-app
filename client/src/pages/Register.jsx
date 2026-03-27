@@ -1,8 +1,9 @@
+import { BASE_URL } from "../config";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-const API = import.meta.env.VITE_API_URL;
+const API = BASE_URL;
 
 const Register = () => {
   const navigate = useNavigate();

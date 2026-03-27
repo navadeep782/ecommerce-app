@@ -1,3 +1,4 @@
+import { BASE_URL } from "../config";
 
 
 import { useEffect, useState } from "react";
@@ -32,7 +33,7 @@ function Home() {
 // Add inside Home component, after fetchProducts useEffect:
 
 useEffect(() => {
-  const socket = io(import.meta.env.VITE_SOCKET_URL, {
+  const socket = io(BASE_URL, {
     transports: ["websocket", "polling"],
   });
 

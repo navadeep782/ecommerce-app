@@ -1,9 +1,10 @@
+import { BASE_URL } from "../../config";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { io } from "socket.io-client";
 import AdminSidebar from "../../components/AdminSidebar";
 
-const API = import.meta.env.VITE_API_URL;
+const API = BASE_URL;
 
 const STATUSES = ["pending", "confirmed", "processing", "shipped", "delivered", "cancelled"];
 
@@ -104,7 +105,7 @@ const ManageOrders = () => {
 
   // ✅ 3. Socket for instant updates
   useEffect(() => {
-    const socket = io(import.meta.env.VITE_SOCKET_URL, {
+    const socket = io(BASE_URL, {
       withCredentials: true,
     });
     socketRef.current = socket;

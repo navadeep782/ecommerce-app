@@ -1,3 +1,4 @@
+import { BASE_URL } from "../config";
 // React hook to manage component state
 import { useState } from "react";
 
@@ -13,7 +14,7 @@ import { useDispatch } from "react-redux";
 // Redux action to store logged-in user information
 import { setUser } from "../redux/userSlice";
 
-const API = import.meta.env.VITE_API_URL;
+const API = BASE_URL;
 
 const Login = () => {
 

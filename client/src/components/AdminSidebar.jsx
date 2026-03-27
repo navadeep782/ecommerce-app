@@ -1,15 +1,16 @@
+import { BASE_URL } from "../config";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 
-const API = import.meta.env.VITE_API_URL;
+const API = BASE_URL;
 
 const AdminSidebar = () => {
   const [newOrderCount, setNewOrderCount] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
-    const socket = io(import.meta.env.VITE_SOCKET_URL, { withCredentials: true });
+    const socket = io(BASE_URL, { withCredentials: true });
 
     socket.on("connect", () => {
       socket.emit("joinAdmin"); // join adminRoom
