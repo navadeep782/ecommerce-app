@@ -78,4 +78,8 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 app.use(notFound);
 app.use(errorHandler);
 
-server.listen(process.env.PORT);
+// server.listen(process.env.PORT);
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
