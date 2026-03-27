@@ -1,20 +1,3 @@
-# Dependencies
 node_modules/
-client/node_modules/
-server/node_modules/
-
-# Environment variables (keep secrets safe!)
 .env
-.env.local
-
-# Build output
 client/build/
-dist/
-
-# Logs
-*.log
-npm-debug.log*
-
-# OS files
-.DS_Store
-Thumbs.db
